@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{modo}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h1 style="color: red">{{modoCarregada}}!</h1>
+  <ion-item>
+    <ion-input label="descricao" labelPlacement="floating" [(ngModel)]="produto.descricao"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="number" label="Preco" labelPlacement="floating" [(ngModel)]="produto.preco"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Vencimento</ion-label>
+    <ion-datetime-button datetime="datetime"></ion-datetime-button>
+    <ion-popover [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime presentation="date" id="datetime" [showDefaultButtons]="true" [(ngModel)]="produto.validade">
+        </ion-datetime>
+      </ng-template>
+    </ion-popover>
+  </ion-item>
+  <ion-item>
+    <ion-button (click)="salvar()">Salvar</ion-button>
+  </ion-item>
+</ion-content>

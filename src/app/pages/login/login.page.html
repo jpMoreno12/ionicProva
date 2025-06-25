@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+<ion-item>
+  <ion-input
+    type="email"
+    label="Email"
+    labelPlacement="floating"
+    [(ngModel)]="email">
+  </ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-input
+    type="password"
+    label="Senha"
+    labelPlacement="floating"
+    [(ngModel)]="senha">
+  </ion-input>
+</ion-item>
+
+<ion-button expand="block" (click)="fazerLogin()">Entrar</ion-button>
+
+ <ion-list class="ion-margin-top">
+  <ion-list-header>
+    Logins que ja existem no banco (executar o script do banco ou criar um novo usuario manualmente - script na raiz da api_users):
+  </ion-list-header>
+  <ion-item *ngFor="let user of usuariosMockados">
+    <ion-label>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Senha:</strong> {{ user.senha }}</p>
+    </ion-label>
+  </ion-item>
+</ion-list>
+
+
+</ion-content>
+
